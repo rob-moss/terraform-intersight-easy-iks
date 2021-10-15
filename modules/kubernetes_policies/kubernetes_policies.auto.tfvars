@@ -28,7 +28,7 @@ organizations = ["default"]
 # Default Tags if no resource tags are defined
 #__________________________________________________________
 
-tags = [{ key = "Terraform", value = "Module" }, { key = "Owner", value = "tyscott" }]
+tags = [{ key = "Module", value = "terraform-intersight-iks-iwo" }, { key = "Owner", value = "romoss" }, { key = "Environment", value = "iksworkshop" }]
 
 
 #______________________________________________
@@ -37,11 +37,11 @@ tags = [{ key = "Terraform", value = "Module" }, { key = "Owner", value = "tysco
 #______________________________________________
 
 addons_policies = {
-  ccp-monitor = {
+  "ccp-monitor" = {
     organization = "default"
     # This is empty because I am accepting all the default values
   }
-  kubernetes-dashboard = {
+  "kubernetes-dashboard" = {
     install_strategy = "InstallOnly"
     organization     = "default"
     upgrade_strategy = "AlwaysReinstall"
@@ -61,45 +61,24 @@ container_runtime_policies = {}
 #______________________________________________
 
 ip_pools = {
-  "#Cluster#_pool_v4" = {
+  "iksworkshop_pool_1" = {
     assignment_order = "sequential"
     ipv4_block = [
       {
-        from = "10.96.110.101"
-        to   = "10.96.110.200"
+        from = "172.17.49.200"
+        to   = "172.17.49.250"
       },
     ]
     ipv4_config = {
       config = {
-        gateway       = "10.96.110.1"
+        gateway       = "172.17.49.1"
         netmask       = "255.255.255.0"
-        primary_dns   = "10.101.128.15"
-        secondary_dns = "10.101.128.16"
+        primary_dns   = "172.16.1.98"
+        #secondary_dns = "10.101.128.16"
       }
     }
     ipv6_block   = []
     ipv6_config  = {}
-    organization = "default"
-    tags         = []
-  }
-  "#Cluster#_pool_v6" = {
-    assignment_order = "sequential"
-    ipv4_block       = []
-    ipv4_config      = {}
-    ipv6_block = [
-      {
-        from = "2001:110::101"
-        size = 99
-      }
-    ]
-    ipv6_config = {
-      config = {
-        gateway       = "2001:110::1"
-        prefix        = 64
-        primary_dns   = "2620:119:35::35"
-        secondary_dns = "2620:119:53::53"
-      }
-    }
     organization = "default"
     tags         = []
   }
@@ -111,9 +90,9 @@ ip_pools = {
 #__________________________________________________
 
 kubernetes_version_policies = {
-  "#Cluster#_v1_19_5" = {
+  "iksworkshop_v1_19_5" = {
+    version      = "v1.19.5"
     organization = "default"
-    # This is empty because I am accepting all the default values
   }
 }
 
@@ -123,9 +102,10 @@ kubernetes_version_policies = {
 #______________________________________________
 
 network_cidr_policies = {
-  "#Cluster#_network_cidr" = {
+  "iksworkshop_network_cidr" = {
     organization = "default"
-    # This is empty because I am accepting all the default values
+    cidr_pod     = "192.168.0.0/16"
+    cidr_service = "10.96.0.0/12"
   }
 }
 
@@ -136,15 +116,15 @@ network_cidr_policies = {
 #______________________________________________
 
 nodeos_configuration_policies = {
-  "#Cluster#_nodeos_config" = {
-    dns_servers = ["10.101.128.15", "10.101.128.16"]
-    dns_suffix  = "rich.ciscolabs.com"
+  "iksworkshop_nodeos_config" = {
+    dns_servers = ["172.16.1.98"]
+    dns_suffix  = "auslab.cisco.com"
     #  If ntp_servers is not set, dns_servers will be used as NTP servers
-    # ntp_servers = []
+    ntp_servers = ["172.16.1.90", "172.16.1.91"]
     organization = "default"
     # For a List of timezones see
     # https://github.com/terraform-cisco-modules/terraform-intersight-imm/blob/master/modules/policies_ntp/README.md.
-    timezone = "America/New_York"
+    timezone = "Australia/Sydney"
   }
 }
 
@@ -153,12 +133,15 @@ nodeos_configuration_policies = {
 # Trusted Certificate Authorities Policy Variables
 #__________________________________________________
 
-trusted_certificate_authorities = {
-  "#Cluster#_registry" = {
-    organization        = "default"
-    unsigned_registries = ["10.101.128.128"]
-  }
-}
+trusted_certificate_authorities = {}
+
+#trusted_certificate_authorities = {
+#  "iksworkshop_registry" = {
+#    organization        = "default"
+#    unsigned_registries = ["10.101.128.128"]
+#  }
+#}
+
 
 #_______________________________________________
 #
@@ -166,15 +149,16 @@ trusted_certificate_authorities = {
 #_______________________________________________
 
 virtual_machine_infra_config = {
-  "#Cluster#_vm_infra" = {
+  iksworkshop_vm_infra = {
     organization          = "default"
-    vsphere_cluster       = "Panther"
-    vsphere_datastore     = "NVMe_DS1"
-    vsphere_portgroup     = ["prod|nets|Panther_VM1"]
-    vsphere_resource_pool = "IKS"
-    vsphere_target        = "#Cluster#-vcenter.rich.ciscolabs.com"
+    vsphere_cluster       = "HX-R4-Cloud-Native-Workshop"
+    vsphere_datastore     = "CCP"
+    vsphere_portgroup     = ["field-hxp4|user-workloads|Ext-172.17.49.x_24"]
+    vsphere_resource_pool = ""
+    vsphere_target        = "field-hxp4vc.auslab.cisco.com"
   }
 }
+
 
 #________________________________________________
 #
@@ -182,20 +166,30 @@ virtual_machine_infra_config = {
 #________________________________________________
 
 virtual_machine_instance_type = {
-  "#Cluster#_large" = {
-    cpu          = 12
-    disk         = 80
-    memory       = 32768
+  # Control Plane
+  iksworkshop_ctl-small = {
     organization = "default"
+    cpu          = 2
+    disk         = 60
+    memory       = 16384
   }
-  "#Cluster#_medium" = {
+  # Workers
+  iksworkshop_wrk-small = {
+    organization = "default"
+    cpu          = 4
+    disk         = 60
+    memory       = 32768
+  }
+  iksworkshop_wrk-medium = {
     cpu          = 8
     disk         = 60
-    memory       = 24576
+    memory       = 65536
     organization = "default"
   }
-  "#Cluster#_small" = {
+  iksworkshop_wrk-large = {
+    cpu          = 16
+    disk         = 60
+    memory       = 131072
     organization = "default"
-    # This is empty because I am accepting all the default values
   }
 }

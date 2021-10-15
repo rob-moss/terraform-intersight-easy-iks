@@ -3,11 +3,11 @@
 # Terraform Cloud Variables
 #__________________________________________________________
 
-agent_pool        = "Richfield_Agents"
+#agent_pool        = "Richfield_Agents"
 terraform_version = "1.0.3"
 # tfc_email         = "tyscott@cisco.com"
-tfc_organization = "Cisco-Richfield-Lab"
-vcs_repo         = "scotttyso/terraform-intersight-iks-iwo"
+#tfc_organization = "Cisco-Richfield-Lab"
+#vcs_repo         = "scotttyso/terraform-intersight-iks-iwo"
 /*
   We highly recommend that for the terraform_cloud_token you use an environment variable for input:
   - export TF_VAR_terraform_cloud_token="abcdefghijklmnopqrstuvwxyz.0123456789"
@@ -46,41 +46,44 @@ vcs_repo         = "scotttyso/terraform-intersight-iks-iwo"
 #__________________________________________________________
 
 workspaces = {
-  "wakanda_kubernetes_policies" = {
+  "iksworkshop_kubernetes_policies" = {
     auto_apply          = true
-    description         = "Wakanda Kubernetes Policies."
+    description         = "iksworkshop Kubernetes Policies."
     global_remote_state = true
     working_directory   = "modules/kubernetes_policies"
     workspace_type      = "policies"
   }
-  "wakanda_iks_cl01" = {
+  "iksworkshop_iks_cl01" = {
     auto_apply          = true
-    description         = "Wakanda Intersight Kubernetes Service Cluster01"
+    description         = "iksworkshop Intersight Kubernetes Service Cluster01"
     global_remote_state = true
     working_directory   = "modules/kubernetes_cluster_profiles"
     workspace_type      = "cluster"
   }
-  "wakanda_iks_cl01_kubeconfig" = {
+  "iksworkshop_iks_cl01_kubeconfig" = {
     auto_apply          = true
-    description         = "Wakanda Intersight Kubernetes Service Cluster01 kubeconfig."
+    cluster_name        = "iksworkshop_iks_cl01"
+    description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
     global_remote_state = true
     working_directory   = "modules/kubeconfig"
     workspace_type      = "kubeconfig"
   }
-  "wakanda_iks_cl01_app_hello" = {
-    agent_pool_id     = "Richfield_Agents"
-    auto_apply        = true
-    description       = "Wakanda Intersight Kubernetes Service Cluster01 App Hello."
-    execution_mode    = "agent"
-    working_directory = "modules/app_hello"
-    workspace_type    = "app"
-  }
-  "wakanda_iks_cl01_iwo" = {
-    agent_pool_id     = "Richfield_Agents"
-    auto_apply        = true
-    description       = "Wakanda Intersight Kubernetes Service Cluster01 IWO."
-    execution_mode    = "agent"
-    working_directory = "modules/iwo"
-    workspace_type    = "app"
-  }
+#  "iksworkshop_iks_cl01_app_hello" = {
+#    agent_pool_id     = "Richfield_Agents"
+#    auto_apply        = true
+#    description       = "iksworkshop Intersight Kubernetes Service Cluster01 App Hello."
+#    execution_mode    = "agent"
+#    remote_workspace  = "iksworkshop_iks_cl01_kubeconfig"
+#    working_directory = "modules/app_hello"
+#    workspace_type    = "app"
+#  }
+#  "iksworkshop_iks_cl01_iwo" = {
+#    agent_pool_id     = "Richfield_Agents"
+#    auto_apply        = true
+#    description       = "iksworkshop Intersight Kubernetes Service Cluster01 IWO."
+#    execution_mode    = "agent"
+#    remote_workspace  = "iksworkshop_iks_cl01_kubeconfig"
+#    working_directory = "modules/iwo"
+#    workspace_type    = "app"
+#  }
 }
