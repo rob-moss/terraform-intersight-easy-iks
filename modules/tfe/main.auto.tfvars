@@ -46,21 +46,21 @@ terraform_version = "1.0.3"
 #__________________________________________________________
 
 workspaces = {
-  "iksworkshop_kubernetes_policies" = {
+  "romoss-iksworkshop_kubernetes_policies" = {
     auto_apply          = true
     description         = "iksworkshop Kubernetes Policies."
     global_remote_state = true
     working_directory   = "modules/kubernetes_policies"
     workspace_type      = "policies"
   }
-  "iksworkshop_iks_cl01" = {
+  "romoss-iksworkshop_iks_cl01" = {
     auto_apply          = true
     description         = "iksworkshop Intersight Kubernetes Service Cluster01"
     global_remote_state = true
     working_directory   = "modules/kubernetes_cluster_profiles"
     workspace_type      = "cluster"
   }
-  "iksworkshop_iks_cl01_kubeconfig" = {
+  "romoss-iksworkshop_iks_cl01_kubeconfig" = {
     auto_apply          = true
     cluster_name        = "iksworkshop_iks_cl01"
     description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
