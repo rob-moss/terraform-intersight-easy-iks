@@ -78,48 +78,6 @@ ip_pools = {
     tags         = ["range", "172.17.49.200-249"]
   }
 
-  #"iks-workshop-pool-172.17.49.x" = {
-  #  assignment_order = "sequential"
-  #  ipv4_block = [
-  #    {
-  #      from = "172.17.49.100"
-  #      to   = "172.17.49.159"
-  #    },
-  #  ]
-  #  ipv4_config = {
-  #    config = {
-  #      gateway       = "172.17.49.1"
-  #      netmask       = "255.255.255.0"
-  #      primary_dns   = "172.16.1.98"
-  #    }
-  #  }
-  #  ipv6_block   = []
-  #  ipv6_config  = {}
-  #  organization = "default"
-  #  tags         = []
-  #}
-
-  #"iks-workshop-172.19.5.x" = {
-  #  assignment_order = "sequential"
-  #  ipv4_block = [
-  #    {
-  #      from = "172.19.5.1"
-  #      to   = "172.19.5.254"
-  #    },
-  #  ]
-  #  ipv4_config = {
-  #    config = {
-  #      gateway       = "172.19.4.1"
-  #      netmask       = "255.255.252.0"
-  #      primary_dns   = "172.16.1.98"
-  #    }
-  #  }
-  #  ipv6_block   = []
-  #  ipv6_config  = {}
-  #  organization = "default"
-  #  tags         = []
-  #}
-
 }
 
 #__________________________________________________
