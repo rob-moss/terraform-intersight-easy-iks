@@ -98,9 +98,9 @@ module "ip_pools" {
   for_each         = local.ip_pools
   assignment_order = each.value.assignment_order
   description      = each.value.description != "" ? each.value.description : "${each.value.organization} ${each.key} IP Pool."
-  ipv4_block       = each.value.ipv4_blocks
+  ipv4_blocks       = each.value.ipv4_blocks
   ipv4_config      = each.value.ipv4_config
-  ipv6_block       = each.value.ipv6_blocks
+  ipv6_blocks       = each.value.ipv6_blocks
   ipv6_config      = each.value.ipv6_config
   name             = each.key
   org_moid         = local.org_moids[each.value.organization].moid
