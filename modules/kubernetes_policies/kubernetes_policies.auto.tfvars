@@ -39,7 +39,7 @@ addons_policies = {
   "smm" = {
     # Deploys SMM without the demoapp
     organization = "default"
-#    overrides = yamlencode({"demoApplication":{"enabled":true}})
+    overrides = yamlencode({"demoApplication":{"enabled":true}})
   }
 }
 
