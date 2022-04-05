@@ -4,7 +4,7 @@
 #__________________________________________________________
 
 tfc_organization = "Cisco-IST-TigerTeam"
-tfc_workspace    = "iksworkshop_kubernetes_policies"  # name of IKS Policies workspace
+tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Policies workspace
 
 #__________________________________________________________
 #
