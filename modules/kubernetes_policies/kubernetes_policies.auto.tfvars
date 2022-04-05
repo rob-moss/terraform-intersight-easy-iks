@@ -96,7 +96,7 @@ ip_pools = {
   #  ipv6_block   = []
   #  ipv6_config  = {}
   #  organization = "default"
-  #  tags         = [{ key = "range", value = "x.x.x.x" }]
+  #  tags         = [{ key = "range", value = "172.17.49.100-159" }]
   #}
 
   #"iks-workshop-172.19.5.x" = {
@@ -117,7 +117,8 @@ ip_pools = {
   #  ipv6_block   = []
   #  ipv6_config  = {}
   #  organization = "default"
-  #  tags         = [{ key = "range", value = "x.x.x.x" }]
+  #  tags         = [{ key = "range", value = "172.19.5.1-254" }]
+  #  # description? "VLAN 2037 / Subnet 172.19.5.x/22"
   #}
 
 
