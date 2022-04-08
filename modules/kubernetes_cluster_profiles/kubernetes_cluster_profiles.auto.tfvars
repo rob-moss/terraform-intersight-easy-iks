@@ -43,7 +43,7 @@ kubernetes_cluster_profiles = {
         min_size                = 1
         node_type               = "ControlPlane"
         organization            = "default"
-        vm_infra_config_moid    = "iksworkshop_vm_infra"
+        vm_infra_config_moid    = "iks-general-172.17.49.x"
         vm_instance_type_moid   = "iksworkshop_ctl-small"
       }
       "worker01" = {
@@ -60,7 +60,7 @@ kubernetes_cluster_profiles = {
         max_size                = 3
         min_size                = 1
         node_type               = "Worker"
-        vm_infra_config_moid    = "iksworkshop_vm_infra"
+        vm_infra_config_moid    = "iks-general-172.17.49.x"
         vm_instance_type_moid   = "iksworkshop_wrk-medium"
       }
     }

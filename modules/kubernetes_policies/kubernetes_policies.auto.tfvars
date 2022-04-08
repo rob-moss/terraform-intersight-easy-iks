@@ -202,11 +202,19 @@ trusted_certificate_authorities = {}
 #_______________________________________________
 
 virtual_machine_infra_config = {
-  iksworkshop_vm_infra = {
+  "iks-general-172.17.50.x" = {
     organization          = "default"
     vsphere_cluster       = "HX-R4-Cloud-Native-General"
-    vsphere_datastore     = "CCP"
-    vsphere_portgroup     = ["field-hxp4|user-workloads|Ext-172.17.49.x_24"]
+    vsphere_datastore     = "CCP-Datastore"
+    vsphere_portgroup     = ["field-hxp5|user-workloads|Ext-172.17.50.x_24"]
+    vsphere_resource_pool = ""
+    vsphere_target        = "field-hxp4vc.auslab.cisco.com"
+  }
+  "iks-general-172.19.5.x" = {
+    organization          = "default"
+    vsphere_cluster       = "HX-R4-Cloud-Native-General"
+    vsphere_datastore     = "CCP-Datastore"
+    vsphere_portgroup     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
     vsphere_resource_pool = ""
     vsphere_target        = "field-hxp4vc.auslab.cisco.com"
   }
