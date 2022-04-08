@@ -62,22 +62,22 @@ ip_pools = {
       {
         from = "172.17.49.200"
         to   = "172.17.49.249"
-      },
+      }
     ]
     ipv4_config = {
       config = {
         gateway       = "172.17.49.1"
         netmask       = "255.255.255.0"
         primary_dns   = "172.16.1.98"
-        #secondary_dns = "10.101.128.16"
       }
     }
     ipv6_blocks  = []
     ipv6_config  = {}
     organization = "default"
     tags         = [{ key = "range", value = "172.17.49.200-249" }]
+    description = "IP Subnet 172.17.49.0/24 for Workshop and General"
   }
-
+}
 
 
  #"iks-workshop-pool-172.17.49.x" = {
@@ -122,9 +122,7 @@ ip_pools = {
   #  tags         = [{ key = "range", value = "172.19.5.1-254" }]
   #  # description? "VLAN 2037 / Subnet 172.19.5.x/22"
   #}
-
-
-}
+#}
 
 #__________________________________________________
 #
