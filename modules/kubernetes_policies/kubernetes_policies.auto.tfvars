@@ -71,8 +71,8 @@ ip_pools = {
         primary_dns   = "172.16.1.98"
       }
     }
-    ipv6_blocks  = []
-    ipv6_config  = {}
+    ipv6_blocks  = {}
+    ipv6_config  = []
     organization = "default"
     tags         = [{ key = "range", value = "172.17.49.200-249" }]
     description = "IP Subnet 172.17.49.0/24 for Workshop and General"
