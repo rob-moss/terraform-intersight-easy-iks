@@ -202,7 +202,7 @@ trusted_certificate_authorities = {}
 #_______________________________________________
 
 virtual_machine_infra_config = {
-  "iks-general-172.17.50.x" = {
+  iks-general-172_17_50_x = {
     organization          = "default"
     vsphere_cluster       = "HX-R4-Cloud-Native-General"
     vsphere_datastore     = "CCP-Datastore"
@@ -210,7 +210,7 @@ virtual_machine_infra_config = {
     vsphere_resource_pool = ""
     vsphere_target        = "field-hxp4vc.auslab.cisco.com"
   }
-  "iks-general-172.19.5.x" = {
+  "iks-general-172_19_5_x" = {
     organization          = "default"
     vsphere_cluster       = "HX-R4-Cloud-Native-General"
     vsphere_datastore     = "CCP-Datastore"
