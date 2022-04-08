@@ -72,8 +72,8 @@ ip_pools = {
         #secondary_dns = "10.101.128.16"
       }
     }
-    ipv6_block   = []
-    ipv6_config  = {}
+#    ipv6_block   = []
+#    ipv6_config  = {}
     organization = "default"
     tags         = [{ key = "range", value = "172.17.49.200-249" }]
   }
