@@ -58,7 +58,7 @@ container_runtime_policies = {}
 ip_pools = {
   "iksworkshop_pool_1" = {
     assignment_order = "sequential"
-    ipv4_block = [
+    ipv4_blocks = [
       {
         from = "172.17.49.200"
         to   = "172.17.49.249"
@@ -72,11 +72,13 @@ ip_pools = {
         #secondary_dns = "10.101.128.16"
       }
     }
-#    ipv6_block   = []
-#    ipv6_config  = {}
+    ipv6_blocks  = []
+    ipv6_config  = {}
     organization = "default"
     tags         = [{ key = "range", value = "172.17.49.200-249" }]
   }
+
+
 
  #"iks-workshop-pool-172.17.49.x" = {
   #  assignment_order = "sequential"
@@ -204,7 +206,7 @@ trusted_certificate_authorities = {}
 virtual_machine_infra_config = {
   iks-general-172_17_50_x = {
     description   = "HX General / IP Subnet 172.17.50.x"
-    tags          = []
+    tags          = [{ key = "Cluster", value = "HX-General" }, { key = "Subnet", value = "172.17.50.x" }]
     target        = "field-hxp4vc.auslab.cisco.com"
     virtual_infrastructure = [{
       cluster       = "HX-R4-Cloud-Native-General"
