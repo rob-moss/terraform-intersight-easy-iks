@@ -3,11 +3,12 @@
 # Terraform Cloud Variables
 #__________________________________________________________
 
-#agent_pool        = "Richfield_Agents"
+#agent_pool        = "auslab-tfcb-ist"
 terraform_version = "1.0.3"
-# tfc_email         = "tyscott@cisco.com"
-#tfc_organization = "Cisco-Richfield-Lab"
-#vcs_repo         = "scotttyso/terraform-intersight-iks-iwo"
+# tfc_email         = "romoss@cisco.com"
+# tfc_organization  = "Cisco-IST-TigerTeam"
+#vcs_repo         = "rob-moss/terraform-intersight-easy-iks"
+
 /*
   We highly recommend that for the terraform_cloud_token you use an environment variable for input:
   - export TF_VAR_terraform_cloud_token="abcdefghijklmnopqrstuvwxyz.0123456789"
