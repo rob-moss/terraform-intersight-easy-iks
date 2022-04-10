@@ -58,19 +58,19 @@ container_runtime_policies = {}
 ip_pools = {
   "iksworkshop_pool_1" = {
     assignment_order = "sequential"
-    ipv4_blocks = [
-      {
+    ipv4_blocks = {
+      config = {
         from = "172.17.49.200"
         to   = "172.17.49.249"
       }
-    ]
-    ipv4_config = {
-      config = {
+    }
+    ipv4_config = [
+      {
         gateway       = "172.17.49.1"
         netmask       = "255.255.255.0"
         primary_dns   = "172.16.1.98"
       }
-    }
+    ]
     ipv6_blocks  = {}
     ipv6_config  = []
     organization = "default"
