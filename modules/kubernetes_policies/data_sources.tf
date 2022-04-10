@@ -6,6 +6,4 @@
 
 data "intersight_organization_organization" "org_moid" {
   name = var.organization
-  tfc_workspace = var.tfc_workspace
-  tfc_organization = var.tfc_organization
 }
