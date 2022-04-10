@@ -58,7 +58,7 @@ kubernetes_cluster_profiles = {
     }
     nodeos_configuration_policy   = "iksworkshop_nodeos_config"
     tags                          = []
-    trusted_certificate_authority = [""]
+    trusted_certificate_authority = ""
     wait_for_completion           = false
   }
 }
