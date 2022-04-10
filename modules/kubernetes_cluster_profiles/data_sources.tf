@@ -21,8 +21,8 @@ data "terraform_remote_state" "remote_policies" {
 #    }
 #  }
   backend = "remote"
-  tfc_workspace = var.tfc_workspace
-  tfc_organization = var.tfc_organization
+  workspaces = var.tfc_workspace
+  organization = var.tfc_organization
 
 }
 
