@@ -14,7 +14,7 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 kubernetes_cluster_profiles = {
   "iksworkshop_k8s_cl01" = {
     action                    = "Deploy" # Deploy
-    addons_policies           = ["smm"]
+    addons_policies           = ["smm-demo"]
     certificate_configuration = false
     cluster_configuration = [
       {
