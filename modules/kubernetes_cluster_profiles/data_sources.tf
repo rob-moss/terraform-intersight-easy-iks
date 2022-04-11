@@ -24,16 +24,11 @@ data "terraform_remote_state" "local_policies" {
 #
 
 data "terraform_remote_state" "remote_policies" {
-  for_each = { for k, v in local.tfc_workspaces : k => v if v.backend == "remote" }
-  backend  = each.value.backend
+  backend  = "remote"
   config = {
-    organization = each.value.organization
+    organization = var.organization
     workspaces = {
-      name = each.value.workspace
+      name = var.tfc_organization
     }
   }
 }
-
-#  backend = "remote"
-#  workspaces = var.tfc_workspace
-#  organization = var.tfc_organization
