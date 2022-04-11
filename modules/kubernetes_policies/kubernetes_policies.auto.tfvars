@@ -34,23 +34,23 @@ addons_policies = {
     install_strategy = "InstallOnly"
     upgrade_strategy = "AlwaysReinstall"
   }
-  "smm-demoapp" = {
-    # Deploys SMM with the demoapp
-    chartname = "smm"
-    overrides = yamlencode({"demoApplication":{"enabled":true}})
-    version = "1.8.2-cisco2-helm3"  # Pull this from the API /Addon
-    install_strategy = "InstallOnly"
-    upgrade_strategy = "AlwaysReinstall"
-  }
-  "smm-nodemo" = {
-    # Deploys SMM without the demoapp
-    chartname = "smm"
-    overrides = yamlencode({"demoApplication":{"enabled":false}})
-    version = "1.8.2-cisco2-helm3"  # Pull this from the API /Addon
-    install_strategy = "InstallOnly"
-    upgrade_strategy = "AlwaysReinstall"
-  }
-}
+#  "smm-demoapp" = {
+#    # Deploys SMM with the demoapp
+#    chartname = "smm"
+#    overrides = yamlencode({"demoApplication":{"enabled":true}})
+#    version = "1.8.2-cisco2-helm3"  # Pull this from the API /Addon
+#    install_strategy = "InstallOnly"
+#    upgrade_strategy = "AlwaysReinstall"
+#  }
+#  "smm-nodemo" = {
+#    # Deploys SMM without the demoapp
+#    chartname = "smm"
+#    overrides = yamlencode({"demoApplication":{"enabled":false}})
+#    version = "1.8.2-cisco2-helm3"  # Pull this from the API /Addon
+#    install_strategy = "InstallOnly"
+#    upgrade_strategy = "AlwaysReinstall"
+#  }
+#}
 
 #__________________________________________________
 #
