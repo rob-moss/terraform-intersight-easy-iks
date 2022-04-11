@@ -87,7 +87,7 @@ variable "kubernetes_cluster_profiles" {
           kubernetes_api_vip  = optional(string)
           load_balancer_count = optional(number)
           ssh_public_key      = optional(number)
-          # ssh_user            = optional(string)
+          ssh_user            = optional(string)
         }
       ))
       container_runtime_policy = optional(string)
@@ -257,7 +257,7 @@ resource "intersight_kubernetes_cluster_addon_profile" "cluster_addon" {
     object_type = "organization.Organization"
   }
   dynamic "addons" {
-    for_each = toset(each.value.addons_policies)
+    for_each = toset(each.value.addons_policies) # <-- my brain hurts
     content {
       addon_policy {
         moid = local.addons_policies["${addons.value}"].moid

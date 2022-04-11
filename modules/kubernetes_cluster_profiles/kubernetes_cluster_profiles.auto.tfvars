@@ -14,14 +14,14 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 kubernetes_cluster_profiles = {
   "iksworkshop_k8s_cl01" = {
     action                    = "Deploy" # Deploy
-    addons_policies           = ["smm"]
+    addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
       {
         kubernetes_api_vip  = ""
         load_balancer_count = 3
         ssh_public_key      = 1
-        # ssh_user            = "iksadmin"
+        ssh_user            = "iksadmin"
       }
     ]
     container_runtime_policy = ""

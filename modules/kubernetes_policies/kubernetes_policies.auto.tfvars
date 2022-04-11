@@ -28,20 +28,19 @@ tags = [{ key = "Module", value = "terraform-intersight-easy-iks" }, { key = "Ow
 
 addons_policies = {
   "ccp-monitor" = {
-    organization = "default"
     # This is empty because I am accepting all the default values
   }
   "kubernetes-dashboard" = {
     install_strategy = "InstallOnly"
-    organization     = "default"
     upgrade_strategy = "AlwaysReinstall"
   }
-#  "smm" = {
-#    # Deploys SMM without the demoapp
-#    organization = "default"
-##    overrides = yamlencode({"demoApplication":{"enabled":true}})
-#   # There's an issue here where this policy will choose smm 1.7.2 instead of the latest
-#  }
+  "smm-demoapp" = {
+#    # Deploys SMM with the demoapp
+    overrides = yamlencode({"demoApplication":{"enabled":true}})
+    version = "1.8.2-cisco2-helm3"
+    install_strategy = "InstallOnly"
+    upgrade_strategy = "AlwaysReinstall"
+  }
 }
 
 #__________________________________________________
