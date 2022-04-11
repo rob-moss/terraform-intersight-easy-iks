@@ -11,9 +11,9 @@ variable "tfc_workspaces" {
   default = [
     {
       backend      = "remote"
-      organization = "default"
+      organization = var.tfc_organization
       policies_dir = "../kubernetes_policies/"
-      workspace    = "kubernetes_policies"
+      workspace    = var.workspace
     }
   ]
   description = <<-EOT
@@ -59,7 +59,7 @@ variable "tfc_workspace" {
 }
 
 variable "tfc_organization" {
-  description = "TFCB workspace name"
+  description = "TFCB organization name"
   sensitive   = true
   type        = string
 }
