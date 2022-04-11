@@ -17,7 +17,7 @@ data "terraform_remote_state" "remote_policies" {
   config = {
     organization = each.value.organization
     workspaces = {
-      name = each.value.workspace.name
+      name = each.value.workspace
     }
   }
 }
