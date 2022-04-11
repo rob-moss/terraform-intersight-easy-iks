@@ -36,11 +36,12 @@ addons_policies = {
     organization     = "default"
     upgrade_strategy = "AlwaysReinstall"
   }
-  "smm" = {
-    # Deploys SMM without the demoapp
-    organization = "default"
-#    overrides = yamlencode({"demoApplication":{"enabled":true}})
-  }
+#  "smm" = {
+#    # Deploys SMM without the demoapp
+#    organization = "default"
+##    overrides = yamlencode({"demoApplication":{"enabled":true}})
+#   # There's an issue here where this policy will choose smm 1.7.2 instead of the latest
+#  }
 }
 
 #__________________________________________________
