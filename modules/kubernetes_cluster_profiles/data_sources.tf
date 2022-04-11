@@ -37,9 +37,9 @@ data "terraform_remote_state" "remote_policies" {
 #data "terraform_remote_state" "remote_policies" {
 #  backend  = "remote"
 #  config = {
-#    organization = var.organization
+#    organization = var.tfc_organization
 #    workspaces = {
-#      name = var.tfc_organization
+#      name = var.tfc_workspace
 #    }
 #  }
 #}

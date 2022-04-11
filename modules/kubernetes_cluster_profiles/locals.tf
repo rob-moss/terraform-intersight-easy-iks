@@ -1,13 +1,24 @@
 locals {
   # Output Sources for Policies and Pools
+#  tfc_workspaces = {
+#    for k, v in var.tfc_workspaces : k => {
+#      backend      = v.backend
+#      organization = v.organization != null ? v.organization : "default"
+#      policies_dir = v.policies_dir != null ? v.policies_dir : "../kubernetes_policies/"
+#      workspace    = v.workspace != null ? v.workspace : "kubernetes_policies"
+#    }
+#  }
+
   tfc_workspaces = {
     for k, v in var.tfc_workspaces : k => {
       backend      = v.backend
-      organization = v.organization != null ? v.organization : "efgh"
+      organization = var.tfc_organization
       policies_dir = v.policies_dir != null ? v.policies_dir : "../kubernetes_policies/"
-      workspace    = v.workspace != null ? v.workspace : "kubernetes_policies"
+      workspace    = var.tfc_workspace
     }
   }
+
+
 
   #__________________________________________________________
   #

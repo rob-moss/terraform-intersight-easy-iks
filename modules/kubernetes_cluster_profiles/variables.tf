@@ -11,7 +11,7 @@ variable "tfc_workspaces" {
   default = [
     {
       backend      = "remote"
-      organization = "abcd"
+      organization = "default"
       policies_dir = "../kubernetes_policies/"
       workspace    = "kubernetes_policies"
     }
