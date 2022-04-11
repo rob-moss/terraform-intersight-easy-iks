@@ -31,11 +31,9 @@ data "terraform_remote_state" "remote_policies" {
     organization = var.organization
     workspaces = {
       name = var.workspaces
-      }
     }
   }
 }
-
 
 #data "terraform_remote_state" "remote_policies" {
 #  backend  = "remote"
