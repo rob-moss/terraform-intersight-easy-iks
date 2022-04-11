@@ -52,4 +52,14 @@ variable "secretkey" {
   type        = string
 }
 
+variable "tfc_workspace" {
+  description = "TFCB workspace name"
+  sensitive   = true
+  type        = string
+}
 
+variable "tfc_organization" {
+  description = "TFCB workspace name"
+  sensitive   = true
+  type        = string
+}
