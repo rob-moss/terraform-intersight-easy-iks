@@ -11,7 +11,7 @@ data "terraform_remote_state" "local_policies" {
   }
 }
 
-data "terraform_remote_state" "remote_policies" {
+#data "terraform_remote_state" "remote_policies" {
 #  for_each = { for k, v in local.tfc_workspaces : k => v if v.backend == "remote" }
 #  backend  = each.value.backend
 #  config = {
@@ -20,9 +20,20 @@ data "terraform_remote_state" "remote_policies" {
 #      name = each.value.workspace
 #    }
 #  }
-  backend = "remote"
-  workspaces = var.tfc_workspace
-  organization = var.tfc_organization
+#}
+#
 
+data "terraform_remote_state" "remote_policies" {
+  for_each = { for k, v in local.tfc_workspaces : k => v if v.backend == "remote" }
+  backend  = each.value.backend
+  config = {
+    organization = each.value.organization
+    workspaces = {
+      name = each.value.workspace
+    }
+  }
 }
 
+#  backend = "remote"
+#  workspaces = var.tfc_workspace
+#  organization = var.tfc_organization
