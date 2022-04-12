@@ -84,12 +84,6 @@ variable "target_password" {
   type        = string
 }
 
-variable "target_password" {
-  description = "Target Password.  Note: this is the password of the Credentials used to register the Virtualization Target."
-  sensitive   = true
-  type        = string
-}
-
 
 variable "ssh_public_key_1" {
   default     = ""
