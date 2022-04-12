@@ -26,7 +26,7 @@ kubernetes_cluster_profiles = {
     ]
     container_runtime_policy = ""
     description              = ""
-    ip_pool                  = "iksworkshop_pool_1"
+    ip_pool                  = "iks-workshop-172.19.5.x"
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
@@ -36,10 +36,10 @@ kubernetes_cluster_profiles = {
         min_size                  = 1
         max_size                  = 3
         node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
-        ip_pool                   = ""
+        ip_pool                   = "iks-workshop-172.19.5.x"
         kubernetes_labels         = []
         kubernetes_version_policy = "iksworkshop_v1_21_10"
-        vm_infra_config_policy    = "iks-general-172.17.49.x"
+        vm_infra_config_policy    = "iks-general-172_19_5_x"
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
@@ -49,10 +49,10 @@ kubernetes_cluster_profiles = {
         min_size                  = 1
         max_size                  = 3
         node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
-        ip_pool                   = "iksworkshop_pool_1"
+        ip_pool                   = "iks-workshop-172.19.5.x"
         kubernetes_labels         = []
         kubernetes_version_policy = "iksworkshop_v1_21_10"
-        vm_infra_config_policy    = "iks-general-172.17.49.x"
+        vm_infra_config_policy    = "iks-general-172_19_5_x"
         vm_instance_type_policy   = "iksworkshop_wrk-medium"
       }
     }

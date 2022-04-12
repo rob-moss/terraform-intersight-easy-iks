@@ -233,14 +233,34 @@ virtual_machine_infra_config = {
     }]
   }
 
-#  iks-general-172_17_50_x = {
-#    organization          = "default"
-#    vsphere_cluster       = "HX-R4-Cloud-Native-General"
-#    vsphere_datastore     = "CCP-Datastore"
-#    vsphere_portgroup     = ["field-hxp5|user-workloads|Ext-172.17.50.x_24"]
-#    vsphere_resource_pool = ""
-#    vsphere_target        = "field-hxp4vc.auslab.cisco.com"
+  iks-general-172_19_5_x = {
+    description   = "HX General / IP Subnet 172.19.5.x"
+    tags          = [{ key = "Cluster", value = "HX-General" }, { key = "Subnet", value = "172.19.5.x" }]
+    target        = "field-hxp4vc.auslab.cisco.com"
+    virtual_infrastructure = [{
+      cluster       = "HX-R4-Cloud-Native-General"
+      datastore     = "CCP-Datastore"
+      portgroup     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
+      resource_pool = ""
+      type          = "vmware"
+    }]
+  }
+
+#   IWE Cluster
+#  iks-workshop-172_19_5_x = {
+#    description   = "HX General / IP Subnet 172.19.5.x"
+#    tags          = [{ key = "Cluster", value = "HX-General" }, { key = "Subnet", value = "172.19.5.x" }]
+#    target        = "field-hxp4vc.auslab.cisco.com"
+#    virtual_infrastructure = [{
+#      cluster       = "HX-R4-Cloud-Native-General"
+#      datastore     = "CCP-Datastore"
+#      portgroup     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
+#      resource_pool = ""
+#      type          = "iwe"
+#    }]
 #  }
+
+
 #  "iks-general-172_19_5_x" = {
 #    organization          = "default"
 #    vsphere_cluster       = "HX-R4-Cloud-Native-General"
