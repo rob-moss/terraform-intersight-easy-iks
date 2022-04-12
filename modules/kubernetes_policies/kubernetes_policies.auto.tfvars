@@ -271,7 +271,7 @@ virtual_machine_infra_config = {
     target        = "IWE-Workshop"
     virtual_infrastructure = [{
       interfaces     = ["iwe-tenant-net-v2037"]
-      provider_name = "iwe-workshop"
+      provider_name = "iwe-tenant-net-v2037"
       type          = "iwe"
     }]
   }
