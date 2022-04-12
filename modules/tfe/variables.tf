@@ -118,3 +118,9 @@ variable "ssh_public_key_5" {
   sensitive   = true
   type        = string
 }
+
+variable "target_password" {
+  description = "Target Password.  Note: this is the password of the Credentials used to register the Virtualization Target."
+  sensitive   = true
+  type        = string
+}
