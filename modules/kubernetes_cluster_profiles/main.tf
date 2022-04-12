@@ -14,7 +14,7 @@ variable "kubernetes_cluster_profiles" {
           kubernetes_api_vip  = ""
           load_balancer_count = 3
           ssh_public_key      = 1
-          # ssh_user            = "iksadmin"
+          ssh_user            = "iksadmin"
         }
       ]
       container_runtime_policy = "default"

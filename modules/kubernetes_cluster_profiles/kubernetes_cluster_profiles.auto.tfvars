@@ -68,7 +68,7 @@ kubernetes_cluster_profiles = {
 
   ### Test clusters
   "romoss-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Unassign" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
