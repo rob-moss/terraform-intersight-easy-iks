@@ -56,7 +56,7 @@ workspaces = {
   }
   "romoss-iksworkshop_iks_clusters" = { ## is this for all clusters?
     auto_apply          = true
-    description         = "iksworkshop Intersight Kubernetes Service Cluster01"
+    description         = "iksworkshop Kubernetes Clusters"
     global_remote_state = true
     working_directory   = "modules/kubernetes_cluster_profiles"
     workspace_type      = "cluster"
