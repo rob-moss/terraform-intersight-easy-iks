@@ -34,6 +34,15 @@ addons_policies = {
     install_strategy = "InstallOnly"
     upgrade_strategy = "AlwaysReinstall"
   }
+  "smm-demoapp" = {
+    chart_name       = "smm"
+    chart_version    = "1.8.2-cisco2-helm3"
+    install_strategy = "Always"
+    overrides        = "demoApplication,enabled,true"
+    release_name     = "smm1.8"
+    upgrade_strategy = "ReinstallOnFailure"
+  }
+
 #  "smm-demoapp" = {
 #    # Deploys SMM with the demoapp
 #    chartname = "smm"
@@ -50,7 +59,7 @@ addons_policies = {
 #    install_strategy = "InstallOnly"
 #    upgrade_strategy = "AlwaysReinstall"
 #  }
-#}
+}
 
 #__________________________________________________
 #
