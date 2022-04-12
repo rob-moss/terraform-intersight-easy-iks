@@ -13,7 +13,7 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 
 kubernetes_cluster_profiles = {
   "iksworkshop_k8s_cl01" = {
-    action                    = "Deploy" # Deploy
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -64,7 +64,7 @@ kubernetes_cluster_profiles = {
 
 # IWE cluster
   "iksworkshop_iwe_cl02" = {
-    action                    = "No-Op" # No-Op, Deploy, Destroy
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
