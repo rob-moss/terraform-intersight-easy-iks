@@ -240,6 +240,7 @@ virtual_machine_infra_config = {
     description   = "HX General / IP Subnet 172.17.50.x"
     tags          = [{ key = "Cluster", value = "HX-General" }, { key = "Subnet", value = "172.17.50.x" }]
     target        = "field-hxp4vc.auslab.cisco.com"
+    # target_password from env vars
     virtual_infrastructure = [{
       cluster       = "HX-R4-Cloud-Native-General"
       datastore     = "CCP-Datastore"
