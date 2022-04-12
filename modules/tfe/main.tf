@@ -172,6 +172,12 @@ module "kubernetes_policies_variables" {
       sensitive   = true
       value       = var.vsphere_password
     }
+    "target_password" = {
+      description = "Target Password."
+      key         = "target_password"
+      sensitive   = true
+      value       = var.target_password
+    }
   }
 }
 

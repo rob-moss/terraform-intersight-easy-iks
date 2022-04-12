@@ -263,6 +263,7 @@ virtual_machine_infra_config = {
     }]
   }
 
+
 #   IWE Cluster
   iks-iwe-workshop-172_19_5_x = {
     description   = "IWE Workshop / IP Subnet 172.19.5.x"
@@ -270,7 +271,7 @@ virtual_machine_infra_config = {
     target        = "IWE-Workshop"
     virtual_infrastructure = [{
       interfaces     = ["iwe-tenant-net-v2037"]
-      provider_name = "iwe-workshop"
+      provider_name = "IWE-Workshop"
       type          = "iwe"
     }]
   }
