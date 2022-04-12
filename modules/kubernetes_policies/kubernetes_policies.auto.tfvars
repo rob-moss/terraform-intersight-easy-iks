@@ -208,7 +208,7 @@ nodeos_configuration_policies = {
     dns_suffix  = "auslab.cisco.com"
     #  If ntp_servers is not set, dns_servers will be used as NTP servers
     ntp_servers = ["172.16.1.90", "172.16.1.91"]
-    organization = "default"
+    # organization = "default"
     # For a List of timezones see
     # https://github.com/terraform-cisco-modules/terraform-intersight-imm/blob/master/modules/policies_ntp/README.md.
     timezone = "Australia/Sydney"

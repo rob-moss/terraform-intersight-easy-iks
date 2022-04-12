@@ -120,3 +120,7 @@ variable "ssh_public_key_5" {
   type        = string
 }
 
+variable "cluster_name" {
+  description = "Intersight Kubernetes Service Cluster Name"
+  type        = string
+}

@@ -54,16 +54,16 @@ workspaces = {
     working_directory   = "modules/kubernetes_policies"
     workspace_type      = "policies"
   }
-  "romoss-iksworkshop_iks_clusters" = { ## is this for all clusters?
+  "romoss-iksworkshop_iks_clusters" = { ## This is for all of the clusters?
     auto_apply          = true
     description         = "iksworkshop Kubernetes Clusters"
     global_remote_state = true
     working_directory   = "modules/kubernetes_cluster_profiles"
     workspace_type      = "cluster"
   }
-  "romoss-iksworkshop_iks_cl01_kubeconfig" = {
+  "romoss-iks-smmtest01_kubeconfig" = {
     auto_apply          = true
-    cluster_name        = "romoss-iksworkshop_iks_cl01"
+    cluster_name        = "romoss-iks-smmtest01"
     description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
     global_remote_state = true
     working_directory   = "modules/kubeconfig"
