@@ -43,22 +43,15 @@ addons_policies = {
     upgrade_strategy = "ReinstallOnFailure"
   }
 
-#  "smm-demoapp" = {
-#    # Deploys SMM with the demoapp
-#    chartname = "smm"
-#    overrides = yamlencode({"demoApplication":{"enabled":true}})
-#    version = "1.8.2-cisco2-helm3"  # Pull this from the API /Addon
-#    install_strategy = "InstallOnly"
-#    upgrade_strategy = "AlwaysReinstall"
-#  }
-#  "smm-nodemo" = {
-#    # Deploys SMM without the demoapp
-#    chartname = "smm"
-#    overrides = yamlencode({"demoApplication":{"enabled":false}})
-#    version = "1.8.2-cisco2-helm3"  # Pull this from the API /Addon
-#    install_strategy = "InstallOnly"
-#    upgrade_strategy = "AlwaysReinstall"
-#  }
+  "smm-nodemo" = {
+    chart_name       = "smm"
+    chart_version    = "1.8.2-cisco2-helm3"
+    install_strategy = "Always"
+    overrides        = "demoApplication,enabled,false"
+    release_name     = "smm1.8"
+    upgrade_strategy = "ReinstallOnFailure"
+  }
+
 }
 
 #__________________________________________________
@@ -95,6 +88,29 @@ ip_pools = {
     tags         = [{ key = "range", value = "172.17.49.200-249" }]
     description = "IP Subnet 172.17.49.0/24 for Workshop and General"
   }
+
+  "iks-ippool-172.19.5.x" = {
+    assignment_order = "sequential"
+    ipv4_blocks = {
+      config = {
+        from = "172.19.5.1"
+        to   = "172.19.5.254"
+      }
+    }
+    ipv4_config = [
+      {
+        gateway       = "172.19.4.1"
+        netmask       = "255.255.252.0"
+        primary_dns   = "172.16.1.98"
+      }
+    ]
+    ipv6_blocks  = {}
+    ipv6_config  = []
+    organization = "default"
+    tags         = [{ key = "owner", value = "romoss" },{ key = "vlan", value = "2037" },{ key = "subnet", value = "172.19.5.x" }]
+    description = "VLAN 2037 / Subnet 172.19.5.x/22 for Workshop and General"
+  }
+
 }
 
 
@@ -227,7 +243,7 @@ virtual_machine_infra_config = {
     virtual_infrastructure = [{
       cluster       = "HX-R4-Cloud-Native-General"
       datastore     = "CCP-Datastore"
-      portgroup     = ["field-hxp5|user-workloads|Ext-172.17.50.x_24"]
+      interfaces     = ["field-hxp5|user-workloads|Ext-172.17.50.x_24"]
       resource_pool = ""
       type          = "vmware"
     }]
@@ -240,35 +256,28 @@ virtual_machine_infra_config = {
     virtual_infrastructure = [{
       cluster       = "HX-R4-Cloud-Native-General"
       datastore     = "CCP-Datastore"
-      portgroup     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
+      interfaces     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
       resource_pool = ""
       type          = "vmware"
     }]
   }
 
 #   IWE Cluster
-#  iks-workshop-172_19_5_x = {
+#  iks-iwe-workshop-172_19_5_x = {
 #    description   = "HX General / IP Subnet 172.19.5.x"
 #    tags          = [{ key = "Cluster", value = "HX-General" }, { key = "Subnet", value = "172.19.5.x" }]
-#    target        = "field-hxp4vc.auslab.cisco.com"
+#    #target        = "field-hxp4vc.auslab.cisco.com"
 #    virtual_infrastructure = [{
-#      cluster       = "HX-R4-Cloud-Native-General"
-#      datastore     = "CCP-Datastore"
-#      portgroup     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
+#      cluster       = "IWE-Workshop"
+#      #datastore     = "CCP-Datastore"
+#      interfaces     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
 #      resource_pool = ""
 #      type          = "iwe"
+#      policyname    = "IWE-Workshop"
 #    }]
 #  }
 
 
-#  "iks-general-172_19_5_x" = {
-#    organization          = "default"
-#    vsphere_cluster       = "HX-R4-Cloud-Native-General"
-#    vsphere_datastore     = "CCP-Datastore"
-#    vsphere_portgroup     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
-#    vsphere_resource_pool = ""
-#    vsphere_target        = "field-hxp4vc.auslab.cisco.com"
-#  }
 }
 
 
