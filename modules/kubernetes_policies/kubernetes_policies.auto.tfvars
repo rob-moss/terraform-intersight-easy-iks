@@ -263,17 +263,25 @@ virtual_machine_infra_config = {
   }
 
 #   IWE Cluster
-#  iks-iwe-workshop-172_19_5_x = {
-#    description   = "HX General / IP Subnet 172.19.5.x"
-#    tags          = [{ key = "Cluster", value = "HX-General" }, { key = "Subnet", value = "172.19.5.x" }]
-#    #target        = "field-hxp4vc.auslab.cisco.com"
+  iks-iwe-workshop-172_19_5_x = {
+    description   = "IWE Workshop / IP Subnet 172.19.5.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.19.5.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
+      provider_name = "iwe-tenant-net-v2037"
+      type          = "iwe"
+    }]
+  }
+
+#  "Terminus" = {
+#    description = ""
+#    tags        = []
+#    target      = "IWE-Workshop"
 #    virtual_infrastructure = [{
-#      cluster       = "IWE-Workshop"
-#      #datastore     = "CCP-Datastore"
-#      interfaces     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
-#      resource_pool = ""
+#      interfaces    = ["iwe-guests"]
+#      provider_name = "iwe-guests"
 #      type          = "iwe"
-#      policyname    = "IWE-Workshop"
 #    }]
 #  }
 
