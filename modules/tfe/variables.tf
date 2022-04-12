@@ -84,6 +84,13 @@ variable "vsphere_password" {
   type        = string
 }
 
+variable "target_password" {
+  description = "Target Password.  Note: this is the password of the Credentials used to register the Virtualization Target."
+  sensitive   = true
+  type        = string
+}
+
+
 variable "ssh_public_key_1" {
   default     = ""
   description = "Intersight Kubernetes Service Cluster SSH Public Key 1."
@@ -119,8 +126,3 @@ variable "ssh_public_key_5" {
   type        = string
 }
 
-variable "target_password" {
-  description = "Target Password.  Note: this is the password of the Credentials used to register the Virtualization Target."
-  sensitive   = true
-  type        = string
-}
