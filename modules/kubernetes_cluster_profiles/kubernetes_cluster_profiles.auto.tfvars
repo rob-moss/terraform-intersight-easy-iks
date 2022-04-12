@@ -64,7 +64,7 @@ kubernetes_cluster_profiles = {
 
 # IWE cluster
   "iksworkshop_iwe_cl02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
