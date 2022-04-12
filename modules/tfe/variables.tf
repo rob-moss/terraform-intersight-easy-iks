@@ -119,8 +119,3 @@ variable "ssh_public_key_5" {
   sensitive   = true
   type        = string
 }
-
-variable "cluster_name" {
-  description = "Intersight Kubernetes Service Cluster Name"
-  type        = string
-}
