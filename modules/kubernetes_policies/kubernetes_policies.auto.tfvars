@@ -268,7 +268,7 @@ virtual_machine_infra_config = {
     tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.19.5.x" }]
     target        = "IWE-Workshop"
     virtual_infrastructure = [{
-      interfaces     = ["field-hxp5|user-workloads|Ext-172.19.4.x_22"]
+      interfaces     = ["iwe-tenant-net-v2037"]
       provider_name = "iwe-tenant-net-v2037"
       type          = "iwe"
     }]
