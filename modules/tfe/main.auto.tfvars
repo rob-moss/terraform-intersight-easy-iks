@@ -61,7 +61,7 @@ workspaces = {
     working_directory   = "modules/kubernetes_cluster_profiles"
     workspace_type      = "cluster"
   }
-  "romoss-iks-smmtest01_kubeconfig" = {
+  "romoss-iksworkshop-romoss-iks-smmtest01_kubeconfig" = {
     auto_apply          = true
     cluster_name        = "romoss-iks-smmtest01"
     description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
