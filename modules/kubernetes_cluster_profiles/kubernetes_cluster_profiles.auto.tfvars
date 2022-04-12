@@ -65,7 +65,7 @@ kubernetes_cluster_profiles = {
 # IWE cluster
   "iksworkshop_iwe_cl02" = {
     action                    = "No-Op" # No-Op, Deploy, Destroy
-    addons_policies           = [""]
+    addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
       {
