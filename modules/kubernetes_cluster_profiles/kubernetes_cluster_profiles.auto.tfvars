@@ -172,7 +172,7 @@ kubernetes_cluster_profiles = {
 # IWE clusters
   "romoss-iks-iwetest01" = {
     action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-    addons_policies           = []
+    addons_policies           = ["kubernetes-dashboard"]
     certificate_configuration = false
     cluster_configuration = [
       {
