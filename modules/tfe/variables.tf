@@ -119,3 +119,10 @@ variable "ssh_public_key_5" {
   sensitive   = true
   type        = string
 }
+
+variable "cluster_name" {
+  default     = ""
+  description = "Intersight Kubernetes Service Cluster for TFCB workspace kubeconfig"
+  sensitive   = false
+  type        = string
+}
