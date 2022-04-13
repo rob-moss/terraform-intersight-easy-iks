@@ -232,45 +232,43 @@ module "kubernetes_cluster_profiles_variables" {
 
 
 
-#__________________________________________________________
-#
-# kubernetes_cluster_kubeconfig
-#__________________________________________________________
-
-module "kubernetes_cluster_kubeconfig" {
-  source  = "terraform-cisco-modules/modules/tfe//modules/tfc_variables"
-  version = "0.6.2"
-  depends_on = [
-    module.workspaces
-  ]
-  for_each = {
-    for k, v in local.workspaces : k => v
-    if length(regexall("kubeconfig", local.workspaces[k].workspace_type)) > 0
-  }
-  category     = "terraform"
-  workspace_id = module.workspaces[each.key].workspace.id
-  variable_list = {
-#    apikey = {
-#      description = "Intersight API Key."
-#      key         = "apikey"
-#      sensitive   = true
-#      value       = var.apikey
-#    },
-#    secretkey = {
-#      description = "Intersight Secret Key."
-#      key         = "secretkey"
-#      sensitive   = true
-#      value       = var.secretkey
-#    }
-
-    cluster_name = {
-      description = "IKS Cluster Name to fetch kubeconfig"
-      key         = "cluster_name"
-      sensitive   = false
-      value       = local.cluster_name
-    }
-
-  }
-
-
-}
+# #__________________________________________________________
+# #
+# # kubernetes_cluster_kubeconfig
+# #__________________________________________________________
+# 
+# module "kubernetes_cluster_kubeconfig" {
+#   source  = "terraform-cisco-modules/modules/tfe//modules/tfc_variables"
+#   version = "0.6.2"
+#   depends_on = [
+#     module.workspaces
+#   ]
+#   for_each = {
+#     for k, v in local.workspaces : k => v
+#     if length(regexall("kubeconfig", local.workspaces[k].workspace_type)) > 0
+#   }
+#   category     = "terraform"
+#   workspace_id = module.workspaces[each.key].workspace.id
+#   variable_list = {
+# #    apikey = {
+# #      description = "Intersight API Key."
+# #      key         = "apikey"
+# #      sensitive   = true
+# #      value       = var.apikey
+# #    },
+# #    secretkey = {
+# #      description = "Intersight Secret Key."
+# #      key         = "secretkey"
+# #      sensitive   = true
+# #      value       = var.secretkey
+# #    }
+# 
+#     cluster_name = {
+#       description = "IKS Cluster Name to fetch kubeconfig from"
+#       key         = "cluster_name"
+#       sensitive   = false
+#       value       = var.cluster_name
+#     }
+# 
+#   }
+# }
