@@ -172,12 +172,6 @@ module "kubernetes_policies_variables" {
       sensitive   = true
       value       = var.target_password
     }
-#    "target_password" = {
-#      description = "Target Password."
-#      key         = "target_password"
-#      sensitive   = true
-#      value       = var.target_password
-#    }
   }
 }
 
@@ -273,7 +267,7 @@ module "kubernetes_cluster_kubeconfig" {
       description = "IKS Cluster Name to fetch kubeconfig"
       key         = "cluster_name"
       sensitive   = false
-      value       = var.cluster_name
+      value       = local.cluster_name
     }
 
   }

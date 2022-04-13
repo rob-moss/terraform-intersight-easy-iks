@@ -69,6 +69,20 @@ workspaces = {
     working_directory   = "modules/kubeconfig"
     workspace_type      = "kubeconfig"
   }
+
+
+  "romoss-iksworkshop_iwe_cl02_kubeconfig" = {
+    auto_apply          = true
+    cluster_name        = "romoss-iksworkshop_iwe_cl02"
+    description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
+    global_remote_state = true
+    working_directory   = "modules/kubeconfig"
+    workspace_type      = "kubeconfig"
+  }
+
+
+
+
 #  "iksworkshop_iks_cl01_app_hello" = {
 #    agent_pool_id     = "Richfield_Agents"
 #    auto_apply        = true
@@ -88,15 +102,5 @@ workspaces = {
 #    workspace_type    = "app"
 #  }
 
-  # IWE Cluster kubeconfig
-
-  "romoss-iksworkshop_iwe_cl02_kubeconfig" = {
-    auto_apply          = true
-    cluster_name        = "romoss-iksworkshop_iwe_cl02"
-    description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
-    global_remote_state = true
-    working_directory   = "modules/kubeconfig"
-    workspace_type      = "kubeconfig"
-  }
 
 }
