@@ -89,13 +89,5 @@ workspaces = {
 #  }
 
   # IWE Cluster kubeconfig
-  "romoss-iksworkshop_iwe_cl02_kubeconfig" = {
-    auto_apply          = true
-    cluster_name        = "romoss-iksworkshop_iwe_cl02"
-    description         = "iksworkshop Intersight Kubernetes Service Cluster01 kubeconfig."
-    global_remote_state = true
-    working_directory   = "modules/kubeconfig"
-    workspace_type      = "kubeconfig"
-  }
 
 }
