@@ -190,9 +190,14 @@ kubernetes_version_policies = {
 
 network_cidr_policies = {
   "iksworkshop_network_cidr" = {
-    organization = "default"
-    cidr_pod     = "192.168.0.0/16"
-    cidr_service = "10.96.0.0/12"
+    description         = "Defaults for Kubernetes: Pod 192.168.0.0/16 and Svc 10.96.0.0/12"
+    pod_network_cidr     = "192.168.0.0/16"
+    service_cidr         = "10.96.0.0/12"
+  }
+  "iksworkshop_100.64_cidr" = {
+    description      = "Pod 100.64 and Svc 100.65 networks from Service Provider NAT range"
+    pod_network_cidr = "100.64.0.0/16"
+    service_cidr     = "100.65.0.0/16"
   }
 }
 
