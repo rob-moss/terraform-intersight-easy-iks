@@ -16,7 +16,7 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 
 kubernetes_cluster_profiles = {
   "romoss-iks-demoapps01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -179,7 +179,7 @@ kubernetes_cluster_profiles = {
   ############################################
   ### Test clusters
   "romoss-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -230,7 +230,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -282,7 +282,7 @@ kubernetes_cluster_profiles = {
 
 # IWE clusters
   "romoss-iks-iwetest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["kubernetes-dashboard"]
     certificate_configuration = false
     cluster_configuration = [
@@ -332,7 +332,7 @@ kubernetes_cluster_profiles = {
   }
 
   "romoss-iks-iwetest02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
