@@ -71,9 +71,10 @@ kubernetes_cluster_profiles = {
   # Blue on ESXi
   # Green on IWE
 
-  # Blue on vSphere
+  # Blue on vSphere: SMM ControlPlane
   "romoss-iks-bluevsp01" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -85,7 +86,6 @@ kubernetes_cluster_profiles = {
       }
     ]
     container_runtime_policy = ""
-    description              = ""
     ip_pool                  = "iks-ippool-172.19.5.x"
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
@@ -122,9 +122,10 @@ kubernetes_cluster_profiles = {
     wait_for_completion           = false
   }
 
-  # Green on IWE
+  # Green on IWE: SMM peer cluster
   "romoss-iks-greeniwe01" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    description               = "Blue/Green IKS on IWE - SMM Peer cluster"
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -136,7 +137,6 @@ kubernetes_cluster_profiles = {
       }
     ]
     container_runtime_policy = ""
-    description              = ""
     ip_pool                  = "iks-ippool-172.19.5.x"
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
