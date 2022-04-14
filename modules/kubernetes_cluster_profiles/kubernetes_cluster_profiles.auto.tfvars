@@ -72,7 +72,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE
 
   # Blue on vSphere: SMM ControlPlane
-  "romoss-iks-bluevsp01" = {
+  "romoss-iksvsp-bluevsp01" = {
     description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
     action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
@@ -123,7 +123,7 @@ kubernetes_cluster_profiles = {
   }
 
   # Green on IWE: SMM peer cluster
-  "romoss-iks-greeniwe01" = {
+  "romoss-iksiwe-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
     action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
