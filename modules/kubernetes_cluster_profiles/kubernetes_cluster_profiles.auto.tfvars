@@ -74,7 +74,7 @@ kubernetes_cluster_profiles = {
   # Blue on vSphere: SMM ControlPlane
   "romoss-iks-bluevsp01" = {
     description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -125,7 +125,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iks-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
