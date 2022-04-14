@@ -138,7 +138,7 @@ kubernetes_cluster_profiles = {
     ]
     container_runtime_policy = ""
     ip_pool                  = "iks-ippool-172.19.5.x"
-    network_cidr_policy      = "iksworkshop_network_cidr"
+    network_cidr_policy      = "iksworkshop_100.64_cidr"
     node_pools = {
       "ControlPlanes" = {
         action                    = "Deploy"
