@@ -179,7 +179,7 @@ kubernetes_cluster_profiles = {
   ############################################
   ### Test clusters
   "romoss-iks-smmtest01" = {
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -230,7 +230,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest02" = {
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -282,7 +282,7 @@ kubernetes_cluster_profiles = {
 
 # IWE clusters
   "romoss-iks-iwetest01" = {
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["kubernetes-dashboard"]
     certificate_configuration = false
     cluster_configuration = [
@@ -332,7 +332,7 @@ kubernetes_cluster_profiles = {
   }
 
   "romoss-iks-iwetest02" = {
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
