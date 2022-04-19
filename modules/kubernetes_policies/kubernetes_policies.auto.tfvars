@@ -89,6 +89,7 @@ ip_pools = {
     description = "IP Subnet 172.17.49.0/24 for Workshop and General"
   }
 
+
   "iks-ippool-172.19.5.x" = {
     assignment_order = "sequential"
     ipv4_blocks = {
@@ -175,9 +176,6 @@ kubernetes_version_policies = {
   }
   "iksworkshop_v1_21_10" = {
     version      = "v1.21.10"
-  }
-  "iksworkshop_v1_21_10_1" = {
-    version      = "1.21.10.1"
   }
 
 }
@@ -276,6 +274,17 @@ virtual_machine_infra_config = {
     virtual_infrastructure = [{
       interfaces     = ["iwe-tenant-net-v2037"]
       provider_name = "iwe-tenant-net-v2037"
+      type          = "iwe"
+    }]
+  }
+
+  iks-iwe-workshop-172_17_49_x = {
+    description   = "IWE Workshop / IP Subnet 172.17.49.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.49x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-net-v2018"]
+      provider_name = "iwe-tenant-net-v2018"
       type          = "iwe"
     }]
   }
