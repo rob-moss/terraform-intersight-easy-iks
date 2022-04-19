@@ -166,19 +166,18 @@ ip_pools = {
 kubernetes_version_policies = {
   "iksworkshop_v1_19_5" = {
     version      = "v1.19.5"
-#    organization = "default"
   }
   "iksworkshop_v1_19_15" = {
     version      = "v1.19.15"
-#    organization = "default"
   }
   "iksworkshop_v1_20_14" = {
     version      = "v1.20.14"
-#    organization = "default"
   }
   "iksworkshop_v1_21_10" = {
     version      = "v1.21.10"
-#    organization = "default"
+  }
+  "iksworkshop_v1_21_10_1" = {
+    version      = "v1.21.10.1"
   }
 
 }
