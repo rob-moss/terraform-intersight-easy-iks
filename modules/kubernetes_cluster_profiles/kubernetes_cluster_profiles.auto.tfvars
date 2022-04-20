@@ -181,9 +181,9 @@ kubernetes_cluster_profiles = {
 
 
 
-  # Green on IWE: SMM peer cluster
+  # Test IWE
   "romoss-iksiwe-testiwe01" = {
-    description               = "IWE test iks-iwe-workshop-172_17_50_x"
+    description               = "IWE test iks-iwe-workshop-172_17_49_x"
     action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
@@ -196,8 +196,8 @@ kubernetes_cluster_profiles = {
       }
     ]
     container_runtime_policy = ""
-    ip_pool                  = "iks-romoss-pool-general"
-    network_cidr_policy      = "iksworkshop_100.64_cidr"
+    ip_pool                  = "iksworkshop_pool_1"
+    network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
         action                    = "Deploy"
@@ -206,10 +206,10 @@ kubernetes_cluster_profiles = {
         min_size                  = 1
         max_size                  = 3
         node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
-        ip_pool                   = "iks-romoss-pool-general"
+        ip_pool                   = "iksworkshop_pool_1"
         kubernetes_labels         = []
         kubernetes_version_policy = "iksworkshop_v1_21_10"
-        vm_infra_config_policy    = "iks-iwe-workshop-172_17_50_x"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
@@ -219,10 +219,10 @@ kubernetes_cluster_profiles = {
         min_size                  = 1
         max_size                  = 3
         node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
-        ip_pool                   = "iks-romoss-pool-general"
+        ip_pool                   = "iksworkshop_pool_1"
         kubernetes_labels         = []
         kubernetes_version_policy = "iksworkshop_v1_21_10"
-        vm_infra_config_policy    = "iks-iwe-workshop-172_17_50_x"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"
         vm_instance_type_policy   = "iksworkshop_wrk-medium"
       }
     }
