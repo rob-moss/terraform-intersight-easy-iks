@@ -280,11 +280,22 @@ virtual_machine_infra_config = {
 
   iks-iwe-workshop-172_17_49_x = {
     description   = "IWE Workshop / IP Subnet 172.17.49.x"
-    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.49x" }]
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.49.x" }]
     target        = "IWE-Workshop"
     virtual_infrastructure = [{
-      interfaces     = ["iwe-tenant-net-v2018"]
-      provider_name = "iwe-tenant-net-v2018"
+      interfaces     = ["iwe-tenant-v2018"]
+      provider_name = "iwe-tenant-v2018"
+      type          = "iwe"
+    }]
+  }
+
+  iks-iwe-workshop-172_17_50_x = {
+    description   = "IWE Workshop / IP Subnet 172.17.50.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.50.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-net-v2024"]
+      provider_name = "iwe-tenant-net-v2024"
       type          = "iwe"
     }]
   }
