@@ -112,52 +112,15 @@ ip_pools = {
     description = "VLAN 2037 / Subnet 172.19.5.x/22 for Workshop and General"
   }
 
+#  #####
+#  # Existing IP Pools
+#  # 172.17.49.x | VLAN 2018 | iks-workshop-pool | 172.17.49.50-199
+#  # 172.17.50.x | VLAN 2024 | iks-romoss-pool-general | 172.17.50.100-119, 172.17.50.160-197
+
+
+
 }
 
-
- #"iks-workshop-pool-172.17.49.x" = {
-  #  assignment_order = "sequential"
-  #  ipv4_block = [
-  #    {
-  #      from = "172.17.49.100"
-  #      to   = "172.17.49.159"
-  #    },
-  #  ]
-  #  ipv4_config = {
-  #    config = {
-  #      gateway       = "172.17.49.1"
-  #      netmask       = "255.255.255.0"
-  #      primary_dns   = "172.16.1.98"
-  #    }
-  #  }
-  #  ipv6_block   = []
-  #  ipv6_config  = {}
-  #  organization = "default"
-  #  tags         = [{ key = "range", value = "172.17.49.100-159" }]
-  #}
-
-  #"iks-workshop-172.19.5.x" = {
-  #  assignment_order = "sequential"
-  #  ipv4_block = [
-  #    {
-  #      from = "172.19.5.1"
-  #      to   = "172.19.5.254"
-  #    },
-  #  ]
-  #  ipv4_config = {
-  #    config = {
-  #      gateway       = "172.19.4.1"
-  #      netmask       = "255.255.252.0"
-  #      primary_dns   = "172.16.1.98"
-  #    }
-  #  }
-  #  ipv6_block   = []
-  #  ipv6_config  = {}
-  #  organization = "default"
-  #  tags         = [{ key = "range", value = "172.19.5.1-254" }]
-  #  # description? "VLAN 2037 / Subnet 172.19.5.x/22"
-  #}
-#}
 
 #__________________________________________________
 #

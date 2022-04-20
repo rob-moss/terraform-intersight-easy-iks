@@ -178,6 +178,63 @@ kubernetes_cluster_profiles = {
 
 #  ############################################
 #  ### Test clusters
+
+
+
+  # Green on IWE: SMM peer cluster
+  "romoss-iksiwe-testiwe01" = {
+    description               = "IWE test iks-iwe-workshop-172_17_50_x"
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = []
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 2
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    ip_pool                  = "iks-romoss-pool-general"
+    network_cidr_policy      = "iksworkshop_100.64_cidr"
+    node_pools = {
+      "ControlPlanes" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-romoss-pool-general"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_50_x"
+        vm_instance_type_policy   = "iksworkshop_ctl-small"
+      },
+      "Workers" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-romoss-pool-general"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_50_x"
+        vm_instance_type_policy   = "iksworkshop_wrk-medium"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
+
+
+
+
 #  "romoss-iks-smmtest01" = {
 #    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
 #    addons_policies           = ["smm-demoapp"]
