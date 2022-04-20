@@ -181,10 +181,10 @@ kubernetes_cluster_profiles = {
 
 
 
-  # Test IWE
+  # Test IWE VL2018 / 172.17.49.x workshop
   "romoss-iksiwe-testiwe01" = {
     description               = "IWE test iks-iwe-workshop-172_17_49_x"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -220,6 +220,110 @@ kubernetes_cluster_profiles = {
         max_size                  = 3
         node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
         ip_pool                   = "iksworkshop_pool_1"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"
+        vm_instance_type_policy   = "iksworkshop_wrk-medium"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
+
+  # Test IWE 02 - VL2024 / 172.17.50.x general
+  "romoss-iksiwe-testiwe02" = {
+    description               = "IWE test iks-iwe-general-172_17_50_x"
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = []
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 2
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    ip_pool                  = "iksworkshop_pool_1"
+    network_cidr_policy      = "iksworkshop_network_cidr"
+    node_pools = {
+      "ControlPlanes" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iksworkshop_pool_1"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"
+        vm_instance_type_policy   = "iksworkshop_ctl-small"
+      },
+      "Workers" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iksworkshop_pool_1"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"
+        vm_instance_type_policy   = "iksworkshop_wrk-medium"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
+
+
+
+  # Test IWE
+  "romoss-iksiwe-testiwe03" = {
+    description               = "IWE test iks-ippool-172.17.49.x"
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = []
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 2
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    ip_pool                  = "iks-ippool-172.17.49.x"
+    network_cidr_policy      = "iksworkshop_network_cidr"
+    node_pools = {
+      "ControlPlanes" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.17.49.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"
+        vm_instance_type_policy   = "iksworkshop_ctl-small"
+      },
+      "Workers" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.17.49.x"
         kubernetes_labels         = []
         kubernetes_version_policy = "iksworkshop_v1_21_10"
         vm_infra_config_policy    = "iks-iwe-workshop-172_17_49_x"

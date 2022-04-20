@@ -86,7 +86,30 @@ ip_pools = {
     ipv6_config  = []
     organization = "default"
     tags         = [{ key = "range", value = "172.17.49.200-249" }]
-    description = "IP Subnet 172.17.49.0/24 for Workshop and General"
+    description = "IP Subnet 172.17.49.200-249/24 for Workshop and General"
+  }
+
+  # Workshop 172.17.49.50-199
+  "iks-ippool-172.17.49.x" = {
+    assignment_order = "sequential"
+    ipv4_blocks = {
+      config = {
+        from = "172.17.49.50"
+        to   = "172.17.49.199"
+      }
+    }
+    ipv4_config = [
+      {
+        gateway       = "172.17.49.1"
+        netmask       = "255.255.255.0"
+        primary_dns   = "172.16.1.98"
+      }
+    ]
+    ipv6_blocks  = {}
+    ipv6_config  = []
+    organization = "default"
+    tags         = [{ key = "range", value = "172.17.49.50-199" }]
+    description = "IP Subnet 172.17.49.50-199/24 for Workshop and General"
   }
 
 
@@ -109,7 +132,7 @@ ip_pools = {
     ipv6_config  = []
     organization = "default"
     tags         = [{ key = "owner", value = "romoss" },{ key = "vlan", value = "2037" },{ key = "subnet", value = "172.19.5.x" }]
-    description = "VLAN 2037 / Subnet 172.19.5.x/22 for Workshop and General"
+    description = "IP Subnet 172.19.5.1-254/22 for Workshop and General"
   }
 
 #  #####
