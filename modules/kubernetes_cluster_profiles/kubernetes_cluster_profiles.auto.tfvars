@@ -184,7 +184,7 @@ kubernetes_cluster_profiles = {
   # Test IWE
   "romoss-iksiwe-testiwe01" = {
     description               = "IWE test iks-iwe-workshop-172_17_49_x"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
