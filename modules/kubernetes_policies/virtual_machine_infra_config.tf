@@ -127,7 +127,6 @@ resource "intersight_kubernetes_virtual_machine_infra_config_policy" "virtual_ma
 #        pools {
 #          moid = vm_config.value.ip_pool != "" ? intersight_ippool_pool.ip_pools[vm_config.value.ip_pool].id : null
 #        }
-#        pools = null
         provider_name = vm_config.value.provider_name
         vrf {
           moid        = vm_config.value.vrf != "" ? vm_config.value.vrf : ""
