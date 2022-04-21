@@ -270,6 +270,53 @@ virtual_machine_infra_config = {
   }
 
 
+#   IWE Cluster
+  "iks-iwe-workshop-172.19.5.x" = {
+    description   = "IWE Workshop / IP Subnet 172.19.5.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.19.5.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-net-v2037"]
+      provider_name = "iwe-tenant-net-v2037"
+      type          = "iwe"
+    }]
+  }
+
+  "iks-iwe-workshop-172.17.49.x" = {
+    description   = "IWE Workshop / IP Subnet 172.17.49.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.49.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-v2018"]
+      provider_name = "iwe-tenant-v2018"
+      type          = "iwe"
+    }]
+  }
+
+  "iks-iwe-workshop-172.17.50.x" = {
+    description   = "IWE Workshop / IP Subnet 172.17.50.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.50.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-net-v2024"]
+      provider_name = "iwe-tenant-net-v2024"
+      type          = "iwe"
+    }]
+  }
+
+
+#   IWE Cluster
+  "iwetest" = {
+    description   = "IWE Workshop / IP Subnet 172.19.5.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.19.5.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-net-v2037"]
+      provider_name = "iwe-tenant-net-v2037"
+      type          = "iwe"
+    }]
+  }
+
 }
 
 
