@@ -304,6 +304,20 @@ virtual_machine_infra_config = {
     }]
   }
 
+
+#   IWE Cluster
+  "iwetest" = {
+    description   = "IWE Workshop / IP Subnet 172.19.5.x"
+    tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.19.5.x" }]
+    target        = "IWE-Workshop"
+    virtual_infrastructure = [{
+      interfaces     = ["iwe-tenant-net-v2037"]
+      provider_name = "iwe-tenant-net-v2037"
+      type          = "iwe"
+#      ip_pool       = []
+    }]
+  }
+
 }
 
 
