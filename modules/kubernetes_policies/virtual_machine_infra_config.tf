@@ -15,6 +15,7 @@ variable "virtual_machine_infra_config" {
           datastore     = "datastore1"
           disk_mode     = "Block"
           interfaces    = ["VM Network"]
+# no defualts here. leave undefined. causes issues with IWE
 #          ip_pool       = ""
           mtu           = 0
           name          = ""
