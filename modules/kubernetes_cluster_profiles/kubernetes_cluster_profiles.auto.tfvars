@@ -125,7 +125,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iksiwe-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -184,7 +184,7 @@ kubernetes_cluster_profiles = {
   # Test IWE VL2018 / 172.17.49.x workshop
   "romoss-iksiwe-testiwe01" = {
     description               = "IWE test iksworkshop_pool_1 iks-iwe-workshop-172.17.49.x"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -235,7 +235,7 @@ kubernetes_cluster_profiles = {
   # Test IWE 02 - VL2024 / 172.17.50.x general
   "romoss-iksiwe-testiwe02" = {
     description               = "IWE test iks-iwe-workshop-172.17.49.x cidr 100.64"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -288,7 +288,7 @@ kubernetes_cluster_profiles = {
   # Test IWE
   "romoss-iksiwe-testiwe03" = {
     description               = "IWE test iks-iwe-workshop-172.17.50.x"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -340,7 +340,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iksiwe-testiwe04" = {
     description               = "testiwe04 172.19.5.x"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
