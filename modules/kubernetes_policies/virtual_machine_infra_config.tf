@@ -122,8 +122,9 @@ resource "intersight_kubernetes_virtual_machine_infra_config_policy" "virtual_ma
       network_interfaces {
         mtu  = vm_config.value.mtu
         name = vm_config.value.name
+# Remove this for the vminfracfg policy on IWE
         pools {
-          moid = vm_config.value.ip_pool != "" ? intersight_ippool_pool.ip_pools[vm_config.value.ip_pool].id : ""
+          moid = vm_config.value.ip_pool != "" ? intersight_ippool_pool.ip_pools[vm_config.value.ip_pool].id : null
         }
         provider_name = vm_config.value.provider_name
         vrf {
