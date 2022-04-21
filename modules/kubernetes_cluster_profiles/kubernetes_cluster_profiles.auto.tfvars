@@ -125,7 +125,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iksiwe-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -184,7 +184,7 @@ kubernetes_cluster_profiles = {
   # Test IWE VL2018 / 172.17.49.x workshop
   "romoss-iksiwe-testiwe01" = {
     description               = "IWE test iksworkshop_pool_1 iks-iwe-workshop-172.17.49.x"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [

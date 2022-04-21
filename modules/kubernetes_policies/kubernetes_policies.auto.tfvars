@@ -279,6 +279,7 @@ virtual_machine_infra_config = {
       interfaces     = ["iwe-tenant-net-v2037"]
       provider_name = "iwe-tenant-net-v2037"
       type          = "iwe"
+      ip_pool       = null
     }]
   }
 
