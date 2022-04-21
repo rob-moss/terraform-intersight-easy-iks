@@ -125,7 +125,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iksiwe-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -336,6 +336,57 @@ kubernetes_cluster_profiles = {
     wait_for_completion           = false
   }
 
+
+  # Green on IWE: SMM peer cluster
+  "romoss-iksiwe-testiwe04" = {
+    description               = "testiwe04 172.19.5.x"
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = []
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 2
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    ip_pool                  = "iks-ippool-172.19.5.x"
+    network_cidr_policy      = "iksworkshop_network_cidr"
+    node_pools = {
+      "ControlPlanes" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172.19.5.x"
+        vm_instance_type_policy   = "iksworkshop_ctl-small"
+      },
+      "Workers" = {
+        action                    = "Deploy"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        vm_infra_config_policy    = "iks-iwe-workshop-172.19.5.x"
+        vm_instance_type_policy   = "iksworkshop_wrk-medium"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
 
 
 
