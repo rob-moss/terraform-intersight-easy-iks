@@ -135,11 +135,29 @@ ip_pools = {
     description = "IP Subnet 172.19.5.1-254/22 for Workshop and General"
   }
 
-#  #####
-#  # Existing IP Pools
-#  # 172.17.49.x | VLAN 2018 | iks-workshop-pool | 172.17.49.50-199
-#  # 172.17.50.x | VLAN 2024 | iks-romoss-pool-general | 172.17.50.100-119, 172.17.50.160-197
 
+  # Workshop 172.17.50.100-119
+  "iks-ippool-172.17.50.x" = {
+    assignment_order = "sequential"
+    ipv4_blocks = {
+      config = {
+        from = "172.17.50.100"
+        to   = "172.17.50.119"
+      }
+    }
+    ipv4_config = [
+      {
+        gateway       = "172.17.50.1"
+        netmask       = "255.255.255.0"
+        primary_dns   = "172.16.1.98"
+      }
+    ]
+    ipv6_blocks  = {}
+    ipv6_config  = []
+    organization = "default"
+    tags         = [{ key = "range", value = "172.17.50.100-119" }]
+    description = "IP Subnet 172.17.50.100-119 for Workshop and General"
+  }
 
 
 }
@@ -253,7 +271,7 @@ virtual_machine_infra_config = {
 
 
 #   IWE Cluster
-  iks-iwe-workshop-172_19_5_x = {
+  "iks-iwe-workshop-172.19.5.x" = {
     description   = "IWE Workshop / IP Subnet 172.19.5.x"
     tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.19.5.x" }]
     target        = "IWE-Workshop"
@@ -264,7 +282,7 @@ virtual_machine_infra_config = {
     }]
   }
 
-  iks-iwe-workshop-172_17_49_x = {
+  "iks-iwe-workshop-172.17.49.x" = {
     description   = "IWE Workshop / IP Subnet 172.17.49.x"
     tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.49.x" }]
     target        = "IWE-Workshop"
@@ -275,7 +293,7 @@ virtual_machine_infra_config = {
     }]
   }
 
-  iks-iwe-workshop-172_17_50_x = {
+  "iks-iwe-workshop-172.17.50.x" = {
     description   = "IWE Workshop / IP Subnet 172.17.50.x"
     tags          = [{ key = "Cluster", value = "IWE-Workshop" }, { key = "Subnet", value = "172.17.50.x" }]
     target        = "IWE-Workshop"
