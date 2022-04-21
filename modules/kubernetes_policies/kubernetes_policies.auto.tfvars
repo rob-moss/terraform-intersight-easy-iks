@@ -279,6 +279,7 @@ virtual_machine_infra_config = {
       interfaces     = ["iwe-tenant-net-v2037"]
       provider_name = "iwe-tenant-net-v2037"
       type          = "iwe"
+      ip_pool       = null
     }]
   }
 
@@ -290,6 +291,7 @@ virtual_machine_infra_config = {
       interfaces     = ["iwe-tenant-v2018"]
       provider_name = "iwe-tenant-v2018"
       type          = "iwe"
+      ip_pool       = null
     }]
   }
 
@@ -301,6 +303,7 @@ virtual_machine_infra_config = {
       interfaces     = ["iwe-tenant-net-v2024"]
       provider_name = "iwe-tenant-net-v2024"
       type          = "iwe"
+      ip_pool       = null
     }]
   }
 
@@ -314,7 +317,6 @@ virtual_machine_infra_config = {
       interfaces     = ["iwe-tenant-net-v2037"]
       provider_name = "iwe-tenant-net-v2037"
       type          = "iwe"
-      ip_pool       = null
     }]
   }
 
