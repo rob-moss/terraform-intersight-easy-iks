@@ -125,7 +125,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iksiwe-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -141,7 +141,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "Delete"
+        action                    = "No-Op"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -154,7 +154,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "Delete"
+        action                    = "No-Op"
         desired_size              = 1
         description               = ""
         min_size                  = 1
