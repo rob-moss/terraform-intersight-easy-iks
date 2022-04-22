@@ -125,7 +125,7 @@ kubernetes_cluster_profiles = {
   # Green on IWE: SMM peer cluster
   "romoss-iksiwe-greeniwe01" = {
     description               = "Blue/Green IKS on IWE - SMM Peer cluster"
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -181,10 +181,10 @@ kubernetes_cluster_profiles = {
 
 
 
-  # Test IWE VL2018 / 172.17.49.x workshop
+  # Test IWE VL2018 / 172.17.49.x workshop ## works!
   "romoss-iksiwe-testiwe01" = {
     description               = "IWE test iksworkshop_pool_1 iks-iwe-workshop-172.17.49.x"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -232,10 +232,10 @@ kubernetes_cluster_profiles = {
     wait_for_completion           = false
   }
 
-  # Test IWE 02 - VL2024 / 172.17.50.x general
+  # Test IWE 02 - VL2024 / 172.17.50.x general ## Works!
   "romoss-iksiwe-testiwe02" = {
     description               = "IWE test iks-iwe-workshop-172.17.49.x cidr 100.64"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -285,10 +285,10 @@ kubernetes_cluster_profiles = {
 
 
 
-  # Test IWE
+  # Test IWE # works
   "romoss-iksiwe-testiwe03" = {
     description               = "IWE test iks-iwe-workshop-172.17.50.x"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
