@@ -36,7 +36,7 @@ addons_policies = {
   }
   "smm-demoapp" = {
     chart_name       = "smm"
-    chart_version    = "1.8.2-cisco2-helm3"
+    chart_version    = "1.8.2-cisco5-helm3"
     install_strategy = "Always"
     overrides        = "demoApplication,enabled,true"
     release_name     = "smm1.8"
@@ -45,7 +45,7 @@ addons_policies = {
 
   "smm-nodemo" = {
     chart_name       = "smm"
-    chart_version    = "1.8.2-cisco2-helm3"
+    chart_version    = "1.8.2-cisco5-helm3"
     install_strategy = "Always"
     overrides        = "demoApplication,enabled,false"
     release_name     = "smm1.8"
