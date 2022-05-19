@@ -181,7 +181,9 @@ kubernetes_version_policies = {
   "iksworkshop_v1_21_10" = {
     version      = "v1.21.10"
   }
-
+  "iksworkshop_v1_21_11" = {
+    version      = "v1.21.11"  # 1.21.11-iks.2 ?
+  }
 }
 
 #______________________________________________
