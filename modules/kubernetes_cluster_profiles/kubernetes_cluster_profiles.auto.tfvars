@@ -553,7 +553,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-abccluster02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
