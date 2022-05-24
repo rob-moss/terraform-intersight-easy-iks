@@ -446,7 +446,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -463,7 +463,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "Deploy"
+        action                    = "Delete"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -476,7 +476,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "Deploy"
+        action                    = "Delete"
         desired_size              = 2
         description               = ""
         min_size                  = 1
@@ -497,7 +497,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -514,7 +514,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "Deploy"
+        action                    = "Delete"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -527,7 +527,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "Deploy"
+        action                    = "Delete"
         desired_size              = 2
         description               = ""
         min_size                  = 1
@@ -570,7 +570,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "Deploy"
+        action                    = "Delete"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -583,7 +583,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "Deploy"
+        action                    = "Delete"
         desired_size              = 2
         description               = ""
         min_size                  = 1
