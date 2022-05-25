@@ -16,7 +16,7 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 
 kubernetes_cluster_profiles = {
   "romoss-iks-smmdemo01" = {
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -68,7 +68,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmdemo02" = {
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -340,62 +340,9 @@ kubernetes_cluster_profiles = {
 
 
 
-  # Test IWE # works
-  "romoss-iksiwe-testiwe03" = {
-    description               = "IWE test iks-iwe-workshop-172.17.50.x"
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-    addons_policies           = []
-    certificate_configuration = false
-    cluster_configuration = [
-      {
-        kubernetes_api_vip  = ""
-        load_balancer_count = 2
-        ssh_public_key      = 1
-        ssh_user            = "iksadmin"
-      }
-    ]
-    container_runtime_policy = ""
-    ip_pool                  = "iks-ippool-172.17.50.x"
-    network_cidr_policy      = "iksworkshop_network_cidr"
-    node_pools = {
-      "ControlPlanes" = {
-        action                    = "No-Op"
-        desired_size              = 1
-        description               = ""
-        min_size                  = 1
-        max_size                  = 3
-        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
-        ip_pool                   = "iks-ippool-172.17.50.x"
-        kubernetes_labels         = []
-        kubernetes_version_policy = "iksworkshop_v1_21_10"
-        vm_infra_config_policy    = "iks-iwe-workshop-172.17.50.x"
-        vm_instance_type_policy   = "iksworkshop_ctl-small"
-      },
-      "Workers" = {
-        action                    = "No-Op"
-        desired_size              = 1
-        description               = ""
-        min_size                  = 1
-        max_size                  = 3
-        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
-        ip_pool                   = "iks-ippool-172.17.50.x"
-        kubernetes_labels         = []
-        kubernetes_version_policy = "iksworkshop_v1_21_10"
-        vm_infra_config_policy    = "iks-iwe-workshop-172.17.50.x"
-        vm_instance_type_policy   = "iksworkshop_wrk-medium"
-      }
-    }
-    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
-    tags                          = []
-    trusted_certificate_authority = ""
-    wait_for_completion           = false
-  }
-
-
-
 
   "romoss-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -412,7 +359,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "Delete"
+        action                    = "Deploy"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -425,7 +372,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "Delete"
+        action                    = "Deploy"
         desired_size              = 2
         description               = ""
         min_size                  = 1
@@ -446,7 +393,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -463,7 +410,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "Delete"
+        action                    = "Deploy"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -476,7 +423,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "Delete"
+        action                    = "Deploy"
         desired_size              = 2
         description               = ""
         min_size                  = 1
