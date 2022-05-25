@@ -395,7 +395,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest01" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -446,7 +446,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest02" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
