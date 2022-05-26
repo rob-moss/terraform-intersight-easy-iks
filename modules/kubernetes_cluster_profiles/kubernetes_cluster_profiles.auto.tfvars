@@ -129,7 +129,7 @@ kubernetes_cluster_profiles = {
   # Blue on vSphere: SMM ControlPlane
   "romoss-iksvsp-bluevsp01" = {
     description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
-    action                    = "Delete" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -153,7 +153,7 @@ kubernetes_cluster_profiles = {
         node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
         ip_pool                   = "iks-ippool-172.19.5.x"
         kubernetes_labels         = []
-        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
         vm_infra_config_policy    = "iks-general-172_19_5_x"
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
@@ -166,7 +166,7 @@ kubernetes_cluster_profiles = {
         node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
         ip_pool                   = "iks-ippool-172.19.5.x"
         kubernetes_labels         = []
-        kubernetes_version_policy = "iksworkshop_v1_21_10"
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
         vm_infra_config_policy    = "iks-general-172_19_5_x"
         vm_instance_type_policy   = "iksworkshop_wrk-medium"
       }
