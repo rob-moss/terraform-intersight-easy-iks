@@ -68,7 +68,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmdemo02" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -129,7 +129,7 @@ kubernetes_cluster_profiles = {
   # Blue on vSphere: SMM ControlPlane
   "romoss-iksvsp-bluevsp01" = {
     description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -145,7 +145,7 @@ kubernetes_cluster_profiles = {
     network_cidr_policy      = "iksworkshop_network_cidr"
     node_pools = {
       "ControlPlanes" = {
-        action                    = "No-Op"
+        action                    = "Deploy"
         desired_size              = 1
         description               = ""
         min_size                  = 1
@@ -158,7 +158,7 @@ kubernetes_cluster_profiles = {
         vm_instance_type_policy   = "iksworkshop_ctl-small"
       },
       "Workers" = {
-        action                    = "No-Op"
+        action                    = "Deploy"
         desired_size              = 3
         description               = ""
         min_size                  = 1
