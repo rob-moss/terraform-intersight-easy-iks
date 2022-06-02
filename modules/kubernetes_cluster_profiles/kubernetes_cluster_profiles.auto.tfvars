@@ -226,7 +226,7 @@ kubernetes_cluster_profiles = {
 
   # SMM multi-cluster
   "romoss-iks-smmctlpl01" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -275,9 +275,8 @@ kubernetes_cluster_profiles = {
     wait_for_completion           = false
   }
 
-
   "romoss-iks-smmpeer01" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []  # No SMM addon for the Peer cluster
     certificate_configuration = false
     cluster_configuration = [
