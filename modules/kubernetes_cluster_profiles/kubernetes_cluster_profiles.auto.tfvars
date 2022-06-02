@@ -16,7 +16,7 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 
 kubernetes_cluster_profiles = {
   "romoss-iks-smmdemo01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -68,7 +68,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmdemo02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -121,7 +121,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -172,7 +172,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmtest02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -226,7 +226,7 @@ kubernetes_cluster_profiles = {
 
   # SMM multi-cluster
   "romoss-iks-smmctlpl01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -276,7 +276,7 @@ kubernetes_cluster_profiles = {
   }
 
   "romoss-iks-smmpeer01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []  # No SMM addon for the Peer cluster
     certificate_configuration = false
     cluster_configuration = [
@@ -335,7 +335,7 @@ kubernetes_cluster_profiles = {
   # Blue on vSphere: SMM ControlPlane
   "romoss-iksvsp-bluevsp01" = {
     description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
