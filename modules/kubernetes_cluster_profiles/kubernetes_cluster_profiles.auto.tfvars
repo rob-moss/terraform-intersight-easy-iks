@@ -17,8 +17,7 @@ tfc_workspace    = "romoss-iksworkshop_kubernetes_policies"  # name of IKS Polic
 kubernetes_cluster_profiles = {
   "romoss-iks-smmdemo01" = {
     action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-#    addons_policies           = ["smm-demoapp"]
-    addons_policies           = []
+    addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
       {
@@ -70,8 +69,7 @@ kubernetes_cluster_profiles = {
 
   "romoss-iks-smmdemo02" = {
     action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-#    addons_policies           = ["smm-demoapp"]
-    addons_policies           = []
+    addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
       {
@@ -124,8 +122,7 @@ kubernetes_cluster_profiles = {
 
   "romoss-iks-smmtest01" = {
     action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-#    addons_policies           = ["smm-demoapp"]
-    addons_policies           = []
+    addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
       {
@@ -176,8 +173,7 @@ kubernetes_cluster_profiles = {
 
   "romoss-iks-smmtest02" = {
     action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-#    addons_policies           = ["smm-demoapp"]
-    addons_policies           = []
+    addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
       {
@@ -238,8 +234,7 @@ kubernetes_cluster_profiles = {
   "romoss-iksvsp-bluevsp01" = {
     description              = "Blue/Green IKS on vSphere - SMM ControlPlane"
     action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
-#    addons_policies           = ["smm-demoapp"]
-    addons_policies           = []
+    addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
       {
