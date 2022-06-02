@@ -39,7 +39,7 @@ addons_policies = {
     chart_version    = "1.8.2-cisco5-helm3"
     install_strategy = "Always"
     overrides        = "demoApplication,enabled,true"
-    release_name     = "smm1.8"
+    release_name     = "smm"
     upgrade_strategy = "ReinstallOnFailure"
   }
 
@@ -48,7 +48,7 @@ addons_policies = {
     chart_version    = "1.8.2-cisco5-helm3"
     install_strategy = "Always"
     overrides        = "demoApplication,enabled,false"
-    release_name     = "smm1.8"
+    release_name     = "smm"
     upgrade_strategy = "ReinstallOnFailure"
   }
 
