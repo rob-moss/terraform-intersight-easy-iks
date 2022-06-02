@@ -224,6 +224,109 @@ kubernetes_cluster_profiles = {
 
 
 
+  # SMM multi-cluster
+  "romoss-iks-smmctlpl01" = {
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = ["smm-demoapp"]
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 3
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    description              = ""
+    ip_pool                  = "iks-ippool-172.19.5.x"
+    network_cidr_policy      = "iksworkshop_network_cidr"
+    node_pools = {
+      "ControlPlanes" = {
+        action                    = "No-Op"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
+        vm_infra_config_policy    = "iks-general-172_19_5_x" # iks-iwe-workshop-172.19.5.x = IWE / iks-general-172_19_5_x = IKS
+        vm_instance_type_policy   = "iksworkshop_ctl-small"
+      },
+      "Workers" = {
+        action                    = "No-Op"
+        desired_size              = 3
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
+        vm_infra_config_policy    = "iks-general-172_19_5_x"
+        vm_instance_type_policy   = "iksworkshop_wrk-medium"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
+
+
+  "romoss-iks-smmpeer01" = {
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = []  # No SMM addon for the Peer cluster
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 3
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    description              = ""
+    ip_pool                  = "iks-ippool-172.19.5.x"
+    network_cidr_policy      = "iksworkshop_network_cidr"
+    node_pools = {
+      "ControlPlanes" = {
+        action                    = "No-Op"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlane" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
+        vm_infra_config_policy    = "iks-general-172_19_5_x" # iks-iwe-workshop-172.19.5.x = IWE / iks-general-172_19_5_x = IKS
+        vm_instance_type_policy   = "iksworkshop_ctl-small"
+      },
+      "Workers" = {
+        action                    = "No-Op"
+        desired_size              = 3
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "Worker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
+        vm_infra_config_policy    = "iks-general-172_19_5_x"
+        vm_instance_type_policy   = "iksworkshop_wrk-medium"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
+
+
 
 
   ### Blue / Green SMM clusters
