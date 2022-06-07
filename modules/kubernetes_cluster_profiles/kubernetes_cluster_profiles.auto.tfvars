@@ -327,6 +327,44 @@ kubernetes_cluster_profiles = {
 
 
 
+  "romoss-iks-smmctlplwrktest01" = {
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    addons_policies           = []  # No SMM addon for the Peer cluster
+    certificate_configuration = false
+    cluster_configuration = [
+      {
+        kubernetes_api_vip  = ""
+        load_balancer_count = 3
+        ssh_public_key      = 1
+        ssh_user            = "iksadmin"
+      }
+    ]
+    container_runtime_policy = ""
+    description              = ""
+    ip_pool                  = "iks-ippool-172.19.5.x"
+    network_cidr_policy      = "iksworkshop_network_cidr"
+    node_pools = {
+      "ControlPlaneWorker" = {
+        action                    = "No-Op"
+        desired_size              = 1
+        description               = ""
+        min_size                  = 1
+        max_size                  = 3
+        node_type                 = "ControlPlaneWorker" # ControlPlaneWorker, ControlPlane, Worker
+        ip_pool                   = "iks-ippool-172.19.5.x"
+        kubernetes_labels         = []
+        kubernetes_version_policy = "iksworkshop_v1_21_11"
+        vm_infra_config_policy    = "iks-general-172_19_5_x" # iks-iwe-workshop-172.19.5.x = IWE / iks-general-172_19_5_x = IKS
+        vm_instance_type_policy   = "iksworkshop_wrk-large"
+      }
+    }
+    nodeos_configuration_policy   = "iksworkshop_nodeos_config"
+    tags                          = []
+    trusted_certificate_authority = ""
+    wait_for_completion           = false
+  }
+
+
 
   ### Blue / Green SMM clusters
   # Blue on ESXi
@@ -551,7 +589,7 @@ kubernetes_cluster_profiles = {
 # Clusters for Mo
 
   "movaswan-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -601,7 +639,7 @@ kubernetes_cluster_profiles = {
   }
 
   "movaswan-iks-smmtest02" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
@@ -653,7 +691,7 @@ kubernetes_cluster_profiles = {
 
   "movaswan-iksiwe-testiwe01" = {
     description               = "IWE test iks-iwe-workshop-172.17.49.x cidr 100.64"
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
@@ -704,7 +742,7 @@ kubernetes_cluster_profiles = {
 
 ### Sho's Cluster
   "sfunatsu-iks-smmtest01" = {
-    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = ["smm-demoapp"]
     certificate_configuration = false
     cluster_configuration = [
