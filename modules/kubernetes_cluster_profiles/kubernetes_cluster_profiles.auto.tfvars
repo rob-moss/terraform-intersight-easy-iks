@@ -328,7 +328,7 @@ kubernetes_cluster_profiles = {
 
 
   "romoss-iks-smmctlplwrktest01" = {
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []  # No SMM addon for the Peer cluster
     certificate_configuration = false
     cluster_configuration = [
@@ -691,7 +691,7 @@ kubernetes_cluster_profiles = {
 
   "movaswan-iksiwe-testiwe01" = {
     description               = "IWE test iks-iwe-workshop-172.17.49.x cidr 100.64"
-    action                    = "No-Op" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
+    action                    = "Deploy" # Options are {Delete|Deploy|Ready|No-op|Unassign}.
     addons_policies           = []
     certificate_configuration = false
     cluster_configuration = [
